@@ -8,7 +8,6 @@ import java.util.List;
 public interface UserService {
     User getUserByname(String name);
 
-    User saveUser(String name, String age);
 
     User getUserById(Long id);
 

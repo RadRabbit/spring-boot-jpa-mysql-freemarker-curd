@@ -13,7 +13,6 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserDao userDao;
-
     @Override
     public User getUserByname(String name) {
         User user = userDao.findByName(name);
@@ -24,29 +23,17 @@ public class UserServiceImpl implements UserService {
         User user = userDao.findById(id);
         return user;
     }
-
-    public User saveUser(String name, String age) {
-        User user = new User();
-        user.setName(name);
-        user.setAge(name);
-        userDao.save(user);
-        return user;
-    }
-
     @Override
     public List<User> getUserList(){
         List<User> userList = userDao.findAll();
         return userList;
-
     }
-
     @Override
     public void delete(Long id) {
         this.userDao.deleteById(id);
     }
 
     @Override
-
     public User save(User user) {
         return this.userDao.save(user);
     }
