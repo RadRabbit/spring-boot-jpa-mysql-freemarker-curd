@@ -64,7 +64,7 @@ public class UserController {
 
     @RequestMapping(value = "/update", method = RequestMethod.POST)
     public String updatePost(@ModelAttribute("user") User user) {
-        User user1 = this.userService.save(user);
+        this.userService.save(user);
         return "redirect:/listAll";
     }
 
