@@ -50,7 +50,7 @@ public class UserController {
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String addPost(@ModelAttribute("user") User user) {
         this.userService.save(user);
-        return "redirect:/user/listAll";
+        return "redirect:/listAll";
     }
 
 
@@ -65,12 +65,12 @@ public class UserController {
     @RequestMapping(value = "/update", method = RequestMethod.POST)
     public String update(@ModelAttribute("user") User user) {
         User user1 = this.userService.save(user);
-        return "redirect:/user/listAll";
+        return "redirect:/listAll";
     }
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     public String delete(@PathVariable("id")Long id) {
         this.userService.delete(id);
-        return "redirect:/user/listAll";
+        return "redirect:/listAll";
     }
 }
